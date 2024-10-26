@@ -1,0 +1,13 @@
+spark-submit \
+  --conf "spark.yarn.appMasterEnv.PYSPARK_PYTHON=C:\Users\Alvaro\Local folder\Local Loyola\aplicaciones-i\.venv\Scripts\python.exe" \
+  --conf "spark.executorEnv.PYSPARK_PYTHON=C:\Users\Alvaro\Local folder\Local Loyola\aplicaciones-i\.venv\Scripts\python.exe" \
+  --master yarn \
+  --deploy-mode cluster \
+  src/00/mnm_count.py
+
+spark-submit --conf spark.pyspark.python="C:/Users\Alvaro\Local folder\Local Loyola\aplicaciones-i\.venv\Scripts\python.exe" --conf spark.yarn.appMasterEnv.PYSPARK_PYTHON="C:/Users\Alvaro\Local folder\Local Loyola\aplicaciones-i\.venv\Scripts\python.exe" --conf spark.executorEnv.PYSPARK_PYTHON="C:\Users\Alvaro\Local folder\Local Loyola\aplicaciones-i\.venv\Scripts\python.exe" src/00/mnm-count.py data/00/mnm_dataset.csv
+
+
+spark-submit --conf spark.pyspark.python="C:/Users\Alvaro\Local folder\Local Loyola\aplicaciones-i\.venv\Scripts\python.exe" src/00/mnm-count.py data/00/mnm_dataset.csv
+
+spark-submit --conf spark.pyspark.python="$(pwd)/.venv/Scripts/python.exe" src/00/mnm-count.py data/00/mnm_dataset.csv
